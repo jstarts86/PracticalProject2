@@ -135,6 +135,21 @@
             friendsList.appendChild(row);
         });
     });
+        function editFriend(index) {
+          // Store the index of the friend being edited in localStorage
+          localStorage.setItem('editIndex', index);
+          window.location.href = 'edit.html';
+        }
+        function deleteFriend(index) {
+          const confirmation = confirm("게시물을 삭제할까요?");
+          if (confirmation) {
+              const storedFriends = localStorage.getItem('friends');
+              let friends = storedFriends ? JSON.parse(storedFriends) : [];
+              friends.splice(index, 1); // Remove the friend
+              localStorage.setItem('friends', JSON.stringify(friends));
+              location.reload();
+        }
+}
     </script>
 
   </body>
