@@ -42,7 +42,7 @@
 
             <div class="col-md-8 order-md-1 mx-auto offset-md-2">
                 <h4 class="mb-3">Friend Information</h4>
-                <form class="needs-validation" novalidate>
+                <form id="myForm" class="needs-validation" novalidate>
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="firstName">First name</label>
@@ -85,11 +85,8 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="address">Address</label>
-                        <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
-                        <div class="invalid-feedback">
-                            Address is required.
-                        </div>
+                          <label for="Favoirte Food">Address</label>
+                        <input type="text" class="form-control" id="foodk" placeholder="Favorite Food?">
                     </div>
 
                     <div class="mb-3">
@@ -99,9 +96,12 @@
                             Birthday is required.
                         </div>
                     </div>
-
+                    <div class="mb-5">
+                      <label for="Notes">Notes</label>
+                      <input type="text" class="form-control" id="notes" placeholder="Any notes" >
+                  </div> 
                     <hr class="mb-4">
-                    <button class="btn btn-primary btn-lg btn-block" type="submit">Save Friend Information</button>
+                    <button class="btn btn-primary btn-lg btn-block" type="submit" form="myForm" >Save Friend Information</button>
                 </form>
             </div>
         </div>
@@ -115,6 +115,41 @@
             </ul>
         </footer>
     </div>
+    <script>
+      const form = document.getElementById("myForm");
+      const firstName = document.getElementById("firstName");
+      const lastName = document.getElementById("lastName");
+      const food = document.getElementById("food");
+      const relationship  = document.getElementById("relationship");
+      const phoneNumber  = document.getElementById("phoneNumber");
+      const email  = document.getElementById("email");
+      const birthday  = document.getElementById("birthday");
+      const notes  = document.getElementById("notes");
+      
+    
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+    
+        const information = {
+          friendFirstName: firstName.value,
+          friendLastName: lastName.value,
+          friendRelationship: relationship.value,
+          friendPhoneNumber: phoneNumber.value,
+          friendEmail: email.value,
+          friendFood: food.value,
+          friendBirthday: birthday.value,
+          friendNotes: notes.value
+        };
+    
+        // Save to local storage
+        let friends = localStorage.getItem('friends') ? JSON.parse(localStorage.getItem('friends')) : [];
+        friends.push(information);
+        localStorage.setItem('friends', JSON.stringify(friends));
+    
+        // Display an alert
+        alert("게시물이 추가됩니다");
+      });
+    </script>
     <script src="bootstrap.bundle.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <!-- <script src="js/custom-form-validation.js"></script> -->
