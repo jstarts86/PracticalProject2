@@ -4,17 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forms</title>
-    <link href="css/form.css" rel="stsylesheet">
+    <link href="form.css" rel="stylesheet">
+
 </head>
 <body>
+    <a class="nav-link" href="index.html">Home</a>
+    <a class="nav-link" href="form.html">Form</a>
+    <a class="nav-link" href="bootstrap.html">RWD</a>
     <fieldset>
         <label for="fname">First name:</label>
         <input type="text" id="fname" name="fname">
+        <br>
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname">
         <br>
         <label for="Order Date">Order Date:</label>
         <input type="date" id="order" name="order">
         <br>
             <label for="food">Choose a Texan Quisine</label>
+            <br>
             <select id="food" name="food">
                 <option value="texmex">TexMex</option>
                 <option value="bbq">Texas Barbeque</option>
@@ -43,8 +51,7 @@
             </form>
         <br>
         <h3> Food Review here</h3>
-        <textarea name="food Review" style="width:300px; height: 200px;">
-        </textarea>
+        <textarea id ="review" name="food Review" style="width:300px; height: 200px;"></textarea>
         <form>
             <input type="submit" value="Submit">
         </form> 

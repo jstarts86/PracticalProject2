@@ -13,35 +13,59 @@
 
 
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
+<style>
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+</style>
 
     
     <!-- Custom styles for this template -->
-    <link href="dashboard.css" rel="stylesheet">
+    <link href="my.css" rel="stylesheet">
   </head>
   <body>
     
+    <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar sidenav">
+      <div class="position-sticky">
+          <h4 class="font-weight-bold pt-3">Best Friends For life</h4>
+          <ul class="nav flex-column">
+              <li class="nav-item">
+                  <a class="nav-link active" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="form.html">Form</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="bootstrap.html">
+                    RWD
+                </a>
+              </li>
+          </ul>
+          <div class="input-group mt-3">
+              <input type="text" class="form-control" placeholder="Searching for Friends">
+              <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button">
+                      <span class="fa fa-search"></span>
+                  </button>
+              </div>
+          </div>
+      </div>
+  </nav>
 
-<div class="container-fluid">
-  
+</nav> 
   <div class="row">
-    <a class="nav-link" href="index.html">Home</a>
-    <a class="nav-link" href="form.html">Form</a>
+
     <main role="main" class="col-md-12 ml-sm-auto col-lg-12 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Friend Circle</h1>
@@ -139,7 +163,7 @@
 </div>
 <script>
       function confirmDelete() {
-        if (confirm("게시물을 삭제할까요?")) {
+        if (confirm("Do you want to delete your imaginary friends?")) {
           // Redirect to delete page or handle deletion
         }
       }
