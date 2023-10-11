@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Friend Management · Bootstrap v4.6</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body class="bg-light">
+
+    <div class="container">
+        <div class="py-5 text-center">
+            <h2>Friend Management</h2>
+            <p class="lead">View friend's information.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 order-md-1 mx-auto offset-md-2">
+                <h4 class="mb-3">Friend Information</h4>
+                <div class="mb-3">
+                    <label>First Name:</label>
+                    <span id="viewFirstName">Johnk</span>
+                </div>
+                <div class="mb-3">
+                    <label>Last Name:</label>
+                    <span id="viewLastName">Song</span>
+                </div>
+                <div class="mb-3">
+                    <label>Relationship:</label>
+                    <span id="viewRelationship">Besto Friendo</span>
+                </div>
+                <div class="mb-3">
+                    <label>Phone Number:</label>
+                    <span id="viewPhoneNumber">010-3737-7373</span>
+                </div>
+                <div class="mb-3">
+                    <label>Email:</label>
+                    <span id="viewEmail">bestofriend@gmail.com</span>
+                </div>
+                <div class="mb-3">
+                    <label>Favorite Food:</label>
+                    <span id="viewFood">Taco Nacho Chimichanga</span>
+                </div>
+                <div class="mb-3">
+                    <label>Birthday:</label>
+                    <span id="viewBirthday">10/13/2023</span>
+                </div>
+                <div class="mb-3">
+                    <label>Notes:</label>
+                    <span id="viewNotes">He is a besto friend</span>
+                </div>
+                <a href="edit.html" class="btn btn-primary">Edit</a>
+                <button onclick="confirmDelete()" class="btn btn-danger">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function confirmDelete() {
+            if (confirm("Do you want to delete the post?")) {
+                // Handle deletion
+            }
+        }
+    </script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
