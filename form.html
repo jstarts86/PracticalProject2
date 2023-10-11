@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link href="css/form.css" rel="stsylesheet">
+</head>
+<body>
+    <fieldset>
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname">
+        <br>
+        <label for="Order Date">Order Date:</label>
+        <input type="date" id="order" name="order">
+        <br>
+            <label for="food">Choose a Texan Quisine</label>
+            <select id="food" name="food">
+                <option value="texmex">TexMex</option>
+                <option value="bbq">Texas Barbeque</option>
+                <option value="taco">Breakfeast Tacos</option>
+                <option value="donuts">Korean Donuts</option>
+            </select>
+        <br>
+            <p>Choose your favorite Texan Drink</p>
+            <form>
+            <input type="radio" id="pop" name="fav_drink" value="POP">
+            <label for="pop">POP</label><br>
+            <input type="radio" id="Coke" name="fav_drink" value="coke">
+            <label for="coke">Coke</label><br>
+            <input type="radio" id="sprite" name="fav_drink" value="sprite">
+            <label for="Sprite">Sprite</label><br>
+            </form>
+        <br>
+        <p> Choose your Utensils:</p>
+            <form>
+                <input type="checkbox" id="forks" name="addon" value="forks">
+                <label for="forks"> Forks</label><br>
+                <input type="checkbox" id="spoons" name="addon" value="spoons">
+                <label for="spoons"> Spoons</label><br>
+                <input type="checkbox" id="knife" name="addon" value="knife">
+                <label for="knife"> Knife</label><br>
+            </form>
+        <br>
+        <h3> Food Review here</h3>
+        <textarea name="food Review" style="width:300px; height: 200px;">
+        </textarea>
+        <form>
+            <input type="submit" value="Submit">
+        </form> 
+    </fieldset>
+</body>
+
+</html>

@@ -27,11 +27,11 @@
     </style>
 
     <!-- Custom styles for this template -->
-    <link href="css/form-validation.css" rel="stylesheet">
+    <link href="css/form-validation.css" rel="stsylesheet">
 </head>
 
 <body class="bg-light">
-
+  <a class="nav-link" href="index.html">Home</a>
     <div class="container">
         <div class="py-5 text-center">
             <h2>Friend Management</h2>
@@ -39,7 +39,6 @@
         </div>
 
         <div class="row">
-
             <div class="col-md-8 order-md-1 mx-auto offset-md-2">
                 <h4 class="mb-3">Friend Information</h4>
                 <form id="myForm" class="needs-validation" novalidate>
@@ -59,14 +58,19 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="mb-3">
-                        <label for="relationship">Relationship</label>
-                        <input type="text" class="form-control" id="relationship" placeholder="Friend, Colleague, etc." required>
-                        <div class="invalid-feedback">
-                            Relationship is required.
-                        </div>
-                    </div>
+                      <label for="relationship">Relationship</label>
+                      <select class="form-control" id="relationship" required>
+                          <option value="">Select a relationship</option>
+                          <option value="Besto Friendo">Besto Friendo</option>
+                          <option value="Friendo">Friendo</option>
+                          <option value="Acquintance">Acquintance</option>
+                          <option value="Fake Friend">Fake Friend</option>
+                      </select>
+                      <div class="invalid-feedback">
+                          Relationship is required.
+                      </div>
+                  </div>
 
                     <div class="mb-3">
                         <label for="phoneNumber">Phone Number</label>
