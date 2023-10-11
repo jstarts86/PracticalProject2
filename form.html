@@ -5,57 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forms</title>
     <link href="form.css" rel="stylesheet">
+    <script>
+        function handleKeyDown() {
+            document.getElementById("rating").innerText = "I need 5 stars so I can get FRIENDS!";
+        }
+        function validateForm() {
+            let fname = document.getElementById("fname").value;
+            let lname = document.getElementById("lname").value;
+            let order = document.getElementById("order").value;
+                if (!fname || !lname || !order) {
+                    alert("Please fill out all required fields my dude!! First Name, Last Name, and OrderDate are required");
+                    return false;
+                }
+            return confirm("Are you sure you want to submit");
+        }
 
+        function foodChanged() {
+            let foods = document.getElementById("food");
+            let selectedFood = foods.options[foods.selectedIndex].text;
+            alert("You selected: " + selectedFood);
+        }
+
+        function displaySelectedFood() {
+            let foods = document.getElementById("food");
+
+            let selectedFood = foods.options[foods.selectedIndex].text;
+
+            document.getElementById("demo").innerText = "The chosen food is: " + selectedFood;
+        }
+        function showDrinkNames() {
+            let drinkNamesDiv = document.getElementById('drinkNames');
+            let cokeElement = document.createElement('span');
+            cokeElement.innerText = 'Coke, ';
+            let spriteElement = document.createElement('span');
+            spriteElement.innerText = 'Sprite, ';
+            let popElement = document.createElement('span');
+            popElement.innerText = 'POP';
+            drinkNamesDiv.appendChild(cokeElement);
+            drinkNamesDiv.appendChild(spriteElement);
+            drinkNamesDiv.appendChild(popElement);
+        }
+        function clearDrinkNames() {
+            document.getElementById("drinkNames").innerHTML = "";
+        }
+    </script>
 </head>
 <body>
     <a class="nav-link" href="index.html">Home</a>
     <a class="nav-link" href="form.html">Form</a>
     <a class="nav-link" href="bootstrap.html">RWD</a>
-    <fieldset>
-        <label for="fname">First name:</label>
-        <input type="text" id="fname" name="fname">
-        <br>
-        <label for="lname">Last name:</label>
-        <input type="text" id="lname" name="lname">
-        <br>
-        <label for="Order Date">Order Date:</label>
-        <input type="date" id="order" name="order">
-        <br>
-            <label for="food">Choose a Texan Quisine</label>
+    <form onsubmit="return validateForm()">
+        <fieldset>
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname">
             <br>
-            <select id="food" name="food">
-                <option value="texmex">TexMex</option>
-                <option value="bbq">Texas Barbeque</option>
-                <option value="taco">Breakfeast Tacos</option>
-                <option value="donuts">Korean Donuts</option>
-            </select>
-        <br>
-            <p>Choose your favorite Texan Drink</p>
-            <form>
-            <input type="radio" id="pop" name="fav_drink" value="POP">
-            <label for="pop">POP</label><br>
-            <input type="radio" id="Coke" name="fav_drink" value="coke">
-            <label for="coke">Coke</label><br>
-            <input type="radio" id="sprite" name="fav_drink" value="sprite">
-            <label for="Sprite">Sprite</label><br>
-            </form>
-        <br>
-        <p> Choose your Utensils:</p>
-            <form>
-                <input type="checkbox" id="forks" name="addon" value="forks">
-                <label for="forks"> Forks</label><br>
-                <input type="checkbox" id="spoons" name="addon" value="spoons">
-                <label for="spoons"> Spoons</label><br>
-                <input type="checkbox" id="knife" name="addon" value="knife">
-                <label for="knife"> Knife</label><br>
-            </form>
-        <br>
-        <h3> Food Review here</h3>
-        <textarea id ="review" name="food Review" style="width:300px; height: 200px;"></textarea>
-        <form>
-            <input type="submit" value="Submit">
-        </form> 
-    </fieldset>
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="lname">
+            <br>
+            <label for="lname">Email: </label>
+            <input type="email" id="mail" name="mail">
+            <br>
+            <label for="Order Date">Order Date:</label>
+            <input type="date" id="order" name="order">
+            <br>
+                <label for="food">Choose a Texan Quisine</label>
+                <br>
+                <select id="food" name="food" onchange="foodChanged()">
+                    <option value="texmex">TexMex</option>
+                    <option value="bbq">Texas Barbeque</option>
+                    <option value="taco">Breakfeast Tacos</option>
+                    <option value="donuts">Korean Donuts</option>
+                </select>
+            <br>
+            <button onclick="displaySelectedFood()">The chosen food is?</button>
+            <p id="demo"></p>
+            <br>
+    
+            <br>
+            
+                <p>Choose your favorite Texan Drink</p>
+                <input type="radio" id="pop" name="fav_drink" value="POP">
+                <label for="pop">POP</label><br>
+                <input type="radio" id="Coke" name="fav_drink" value="coke">
+                <label for="coke">Coke</label><br>
+                <input type="radio" id="sprite" name="fav_drink" value="sprite">
+                <label for="Sprite">Sprite</label><br>
+            <br>
+            <p> Choose your Utensils:</p>
+                    <input type="checkbox" id="forks" name="addon" value="forks">
+                    <label for="forks"> Forks</label><br>
+                    <input type="checkbox" id="spoons" name="addon" value="spoons">
+                    <label for="spoons"> Spoons</label><br>
+                    <input type="checkbox" id="knife" name="addon" value="knife">
+                    <label for="knife"> Knife</label><br>
+            <br>
+            <h3> Food Review here</h3>
+            <textarea id ="review" name="food Review" onkeydown="handleKeyDown()" style="width:300px; height: 200px;"></textarea>
+            <p id="rating"></p>
+                <input type="submit" value="Submit">
+            <h2 id="outMouse" onmouseout="clearDrinkNames()"> Use the Mouse out to clear my drinks</h2>
+            <br>
+            <br>
+            <h2 id="hoverText" onmouseover="showDrinkNames()" >Hover over me to get me some Drinks</h2>
+            <p id="drinkNames"></p>
+        </fieldset>
+    </form>
+   
 </body>
 
 </html>
