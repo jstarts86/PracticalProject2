@@ -114,11 +114,15 @@
                       <input type="text" class="form-control" id="notes" placeholder="Any notes" >
                   </div> 
                     <hr class="mb-4">
-                    <button class="btn btn-primary btn-lg btn-block" type="submit" form="myForm" >Save Friend Information</button>
+                    <button class="btn btn-primary btn-lg btn-block" type="submit" form="myForm" onclick="return confirmAdd()"> Save Friend Information</button>
                 </form>
             </div>
         </div>
-
+        <script>
+            function confirmAdd() {
+                return alert("Are you sure you want to add?");
+            }
+        </script>
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
