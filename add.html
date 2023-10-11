@@ -115,41 +115,6 @@
             </ul>
         </footer>
     </div>
-    <script>
-      const form = document.getElementById("myForm");
-      const firstName = document.getElementById("firstName");
-      const lastName = document.getElementById("lastName");
-      const food = document.getElementById("food");
-      const relationship  = document.getElementById("relationship");
-      const phoneNumber  = document.getElementById("phoneNumber");
-      const email  = document.getElementById("email");
-      const birthday  = document.getElementById("birthday");
-      const notes  = document.getElementById("notes");
-      
-    
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-    
-        const information = {
-          friendFirstName: firstName.value,
-          friendLastName: lastName.value,
-          friendRelationship: relationship.value,
-          friendPhoneNumber: phoneNumber.value,
-          friendEmail: email.value,
-          friendFood: food.value,
-          friendBirthday: birthday.value,
-          friendNotes: notes.value
-        };
-    
-        // Save to local storage
-        let friends = localStorage.getItem('friends') ? JSON.parse(localStorage.getItem('friends')) : [];
-        friends.push(information);
-        localStorage.setItem('friends', JSON.stringify(friends));
-    
-        // Display an alert
-        alert("게시물이 추가됩니다");
-      });
-    </script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <!-- <script src="js/custom-form-validation.js"></script> -->
